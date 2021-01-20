@@ -10,7 +10,6 @@ import jenkins.metrics.api.Metrics;
 import org.jenkinsci.plugins.prometheus.DiskUsageCollector;
 import org.jenkinsci.plugins.prometheus.ExecutorCollector;
 import org.jenkinsci.plugins.prometheus.JenkinsStatusCollector;
-import org.jenkinsci.plugins.prometheus.JobCollector;
 import org.jenkinsci.plugins.prometheus.util.MetricsFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +27,6 @@ public class DefaultPrometheusMetrics implements PrometheusMetrics {
 
     public DefaultPrometheusMetrics() {
         CollectorRegistry collectorRegistry = CollectorRegistry.defaultRegistry;
-        collectorRegistry.register(new JobCollector());
         collectorRegistry.register(new JenkinsStatusCollector());
         collectorRegistry.register(new DropwizardExports(Metrics.metricRegistry()));
         collectorRegistry.register(new DiskUsageCollector());

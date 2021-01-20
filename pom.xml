@@ -8,21 +8,18 @@
     <relativePath />
   </parent>
 
-  <artifactId>prometheus</artifactId>
-  <version>2.0.9-SNAPSHOT</version>
+  <artifactId>prometheus-slim</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>hpi</packaging>
-  <name>Prometheus metrics plugin</name>
+  <name>Slim Prometheus metrics plugin</name>
   <description>Expose Jenkins metrics in prometheus format</description>
-  <url>https://github.com/jenkinsci/prometheus-plugin</url>
-  <inceptionYear>2016</inceptionYear>
+  <url>https://github.com/kyounger/prometheus-plugin</url>
+  <inceptionYear>2021</inceptionYear>
 
   <properties>
     <jenkins.version>2.204.1</jenkins.version>
     <java.level>8</java.level>
     <prometheus.simpleClientJava.version>0.8.0</prometheus.simpleClientJava.version>
-    <workflow.api.version>2.38</workflow.api.version>
-    <workflow.job.version>2.36</workflow.job.version>
-    <workflow.step.version>2.22</workflow.step.version>
     <jenkins.metrics.version>4.0.2.6</jenkins.metrics.version>
     <jenkins.junit.version>1.28</jenkins.junit.version>
     <jenkins.diskUsage.version>0.9</jenkins.diskUsage.version>
@@ -33,15 +30,12 @@
     <system-lambda.version>1.1.0</system-lambda.version>
     <assertj-core.version>3.14.0</assertj-core.version>
     <slf4j.version>1.7.26</slf4j.version>
-    <pipeline.rest.api.version>2.15</pipeline.rest.api.version>
-    <workflow.support.version>3.3</workflow.support.version>
-    <pipeline.graph.analysis.version>1.9</pipeline.graph.analysis.version>
     <script.security.version>1.56</script.security.version>
   </properties>
 
   <organization>
-    <name>Methodair</name>
-    <url>http://www.methodair.io</url>
+    <name>CloudBees</name>
+    <url>http://www.cloudbees.com</url>
   </organization>
 
   <licenses>
@@ -59,13 +53,19 @@
       <organization>Methodair</organization>
       <organizationUrl>http://www.methodair.io/</organizationUrl>
     </developer>
+    <developer>
+      <id>kyounger</id>
+      <name>Kenny Younger</name>
+      <organization>CloudBees</organization>
+      <organizationUrl>http://www.cloudbees.com</organizationUrl>
+    </developer>
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/jenkinsci/prometheus-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/prometheus-plugin.git</developerConnection>
-    <url>https://github.com/jenkinsci/prometheus-plugin/</url>
-    <tag>prometheus-2.0.8</tag>
+    <connection>scm:git:git://github.com/kyounger/prometheus-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:kyounger/prometheus-plugin.git</developerConnection>
+    <url>https://github.com/kyounger/prometheus-plugin/</url>
+    <tag>prometheus-slim-0.0.1</tag>
   </scm>
 
   <repositories>
@@ -82,36 +82,6 @@
   </pluginRepositories>
 
   <dependencies>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>
-      <artifactId>workflow-api</artifactId>
-      <version>${workflow.api.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins.pipeline-stage-view</groupId>
-      <artifactId>pipeline-rest-api</artifactId>
-      <version>${pipeline.rest.api.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>
-      <artifactId>workflow-job</artifactId>
-      <version>${workflow.job.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>
-      <artifactId>workflow-support</artifactId>
-      <version>${workflow.support.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>
-      <artifactId>workflow-step-api</artifactId>
-      <version>${workflow.step.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>pipeline-graph-analysis</artifactId>
-      <version>${pipeline.graph.analysis.version}</version>
-    </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>structs</artifactId>
